@@ -144,4 +144,14 @@ class Product extends Model
     	return $a;
     }
 
+    public function searchItems($content){
+            return DB::table('product')
+            ->leftjoin('category as cat','cat.id_cat','=','product.id_cat')
+            ->leftjoin('gift','gift.id_gift','=','product.id_gift')
+            ->where('product.trash','!=',1)
+            ->where('name','LIKE','%'.$content.'%')
+            ->orWhere('preview','LIKE','%'.$content.'%')
+            ->orWhere('name_cat','LIKE','%'.$content.'%')
+            ->get();
+    }
 }

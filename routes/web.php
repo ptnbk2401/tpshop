@@ -28,6 +28,10 @@ Route::namespace('TPShop')->group(function(){
 		'uses'	=> 'CatController@index',
 		'as'	=> 'tpshop.cat.index'
 	]);
+	Route::post('/ket-qua-tim-kiem',[
+		'uses'	=> 'CatController@search',
+		'as'	=> 'tpshop.cat.search'
+	]);
 	Route::get('/product/{slug}_{id}.html',[
 		'uses'	=> 'DetailController@index',
 		'as'	=> 'tpshop.detail.index'

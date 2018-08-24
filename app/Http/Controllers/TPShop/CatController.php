@@ -19,4 +19,16 @@ class CatController extends Controller
     	// dd($objProductItems);
     	return view('tpshop.cat.index',compact('objProductItems','name_cat'));
     }
+
+    public function search(Request $request){
+        $search_content = $request->search;
+        if(!empty($search_content)){
+            $objProductItems = $this->objProduct->searchItems($search_content);
+            $count = count($objProductItems);
+            return view('tpshop.cat.search',compact('objProductItems','count','search_content'));
+        } else {
+            return redirect()->route('tpshop.index.index');
+        }
+        
+    }
 }

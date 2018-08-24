@@ -28,24 +28,6 @@
 	</ul>
 </div>
 <div class="clearfix"></div>
-<div class="price-filter leftbar">
-	<h3 class="title">
-		Lọc theo Giá
-	</h3>
-	<form class="pricing">
-		<label>
-			<input type="number">
-		</label>
-		<span class="separate">
-			- 
-		</span>
-		<label>
-			<input type="number">
-		</label>
-		<input type="submit" value="Lọc">
-	</form>
-</div>
-<div class="clearfix"></div>
 <div class="product-tag leftbar">
 	<h3 class="title">
 		Products 
